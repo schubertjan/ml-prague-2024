@@ -1,3 +1,4 @@
+"""https://www.kaggle.com/code/priy998/imdb-sqlite/input?select=movie.sqlite"""
 from langchain_community.utilities import SQLDatabase
 import os
 import streamlit as st
@@ -10,8 +11,8 @@ with open(os.path.join(project_path, ".env"), "r") as f:
     os.environ["OPENAI_API_KEY"] = f.readline()
 
 def main():
-    st.set_page_config(page_title="Ask Chinook")
-    st.header("Ask Chinook")
+    st.set_page_config(page_title="Ask Your Database")
+    st.header("Ask DB")
 
     db = SQLDatabase.from_uri("sqlite:///movie.db")
     llm = ChatOpenAI(model="gpt-3.5-turbo-0125", temperature=0)
